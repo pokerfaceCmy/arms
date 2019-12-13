@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * @author pokerfaceCmy
  * @date 2019/12/12 18:08
- * @description com.pokerfacecmy.common.net.exception
+ * @description 异常处理
  * @email cheng.meng.yuan@qq.com
  */
 public class ApiException extends IOException {

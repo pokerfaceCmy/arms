@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * @author pokerfaceCmy
  * @date 2019/12/12 10:48
- * @description com.pokerfacecmy.common.net.transformer
+ * @description Rxjava线程转换
  * @email cheng.meng.yuan@qq.com
  */
 public class RxTransformer {

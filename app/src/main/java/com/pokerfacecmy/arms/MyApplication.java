@@ -20,7 +20,7 @@ public class MyApplication extends Application {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
         HttpManager
-                .init(this,true)
+                .init(this, true)
                 .setBaseUrl("https://whiot.ihaozhuo.com/")
                 .setDefaultErrMsg("服务器开小差了")
                 .setApiResultClass(IhzApiResult.class)

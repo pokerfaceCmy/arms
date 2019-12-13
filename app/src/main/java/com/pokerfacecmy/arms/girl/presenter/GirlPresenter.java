@@ -29,7 +29,7 @@ public class GirlPresenter
     public void getGankGirl() {
         new GirlModel()
                 .getGankGirls()
-                .subscribe(new ApiObserver<List<GankGirl>>(getView(),true,true) {
+                .subscribe(new ApiObserver<List<GankGirl>>(getView(), true, true) {
                     @Override
                     public void success(List<GankGirl> gankGirls) {
                         getView().gankGirlGet(gankGirls);
