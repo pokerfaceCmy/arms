@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //屏幕适配以及工具类代码  https://blankj.com/2016/07/31/android-utils-code/
+    api 'com.blankj:utilcode:1.23.7'
+    // 状态栏适配,基础依赖包，必须要依赖    https://github.com/gyf-dev/ImmersionBar
+    api 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'
+    //okhttp3   https://github.com/square/okhttp
+    api 'com.squareup.okhttp3:okhttp:4.2.2'
+    //okhttp3网络拦截器  https://github.com/square/okhttp/blob/master/okhttp-logging-interceptor/README.md
+    api 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    //okhttp3 urlConnection https://github.com/square/okhttp/tree/master/okhttp-urlconnection
+    api 'com.squareup.okhttp3:okhttp-urlconnection:4.2.1'
+    //retrofit2 https://github.com/square/retrofit
+    api 'com.squareup.retrofit2:retrofit:2.6.2'
+    //retrofit2解析器
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //rxJava2   https://github.com/ReactiveX/RxAndroid
+    api 'io.reactivex.rxjava2:rxjava:2.2.14'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //json解析    https://github.com/google/gson
+    api 'com.google.code.gson:gson:2.8.6'
+    //RxLifecycle3生命周期管理    https://github.com/trello/RxLifecycle
+    api 'com.trello.rxlifecycle3:rxlifecycle:3.1.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-android:3.1.0'
+    api 'com.trello.rxlifecycle3:rxlifecycle-components:3.1.0'
+    //RxBinding3    https://github.com/JakeWharton/RxBinding
+    api 'com.jakewharton.rxbinding3:rxbinding:3.0.0-alpha2'
+    api 'com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2'
+    //butter knife   https://github.com/JakeWharton/butterknife
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    //stetho    https://github.com/facebook/stetho
+    api 'com.facebook.stetho:stetho:1.5.1'
+    api 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+}

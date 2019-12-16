@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AdaptScreenUtils;
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.gyf.immersionbar.BarHide;
 import com.gyf.immersionbar.ImmersionBar;
 import com.pokerfacecmy.common.mvp.presenter.IBasePresenter;
@@ -68,9 +70,9 @@ public abstract class BaseActivity<P extends IBasePresenter>
      */
     private void initImmersionBar() {
         ImmersionBar.with(this)
+                .transparentStatusBar()
+                .fitsSystemWindowsInt(true, Color.parseColor("#3f51b5"))
                 .statusBarView(ViewGroup.inflate(this, setContentView(), null))
-                //解决状态栏和布局重叠问题
-                .hideBar(BarHide.FLAG_HIDE_STATUS_BAR)
                 .init();
     }
 
